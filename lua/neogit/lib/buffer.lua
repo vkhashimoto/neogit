@@ -86,6 +86,10 @@ function Buffer:get_current_line()
   return self:get_line(fn.getpos(".")[2])
 end
 
+function Buffer:get_current_line_number()
+  return fn.getpos(".")[2]
+end
+
 function Buffer:set_lines(first, last, strict, lines)
   api.nvim_buf_set_lines(self.handle, first, last, strict, lines)
 end
